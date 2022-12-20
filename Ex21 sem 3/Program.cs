@@ -16,4 +16,4 @@ Console.Write("Введите координаты zB: ");
 int zB = int.Parse(Console.ReadLine());
 double S = 0;
 S = Math.Sqrt(Math.Pow(xA - xB, 2) + Math.Pow(yA - yB, 2) + Math.Pow(zA - zB, 2));
-Console.WriteLine($"Расстояние между точками = {Math.Round(S, 3)}");
+Console.WriteLine($"Расстояние между точками = {Math.Round(S, 2)}");
