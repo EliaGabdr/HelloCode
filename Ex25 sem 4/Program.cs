@@ -2,11 +2,21 @@
 // 3, 5 -> 243 (3⁵)
 // 2, 4 -> 16
 
+// Задача 27: Напишите программу, которая принимает на вход число и выдаёт сумму цифр в числе.
+// 452 -> 11
+// 82 -> 10
+// 9012 -> 12
+
+// Задача 29: Напишите программу, которая задаёт массив из 8 элементов и выводит их на экран.
+// 1, 2, 5, 7, 19 -> [1, 2, 5, 7, 19]
+// 6, 1, 33 -> [6, 1, 33]
+
 Console.Write("Input command: ");
 switch (Console.ReadLine())
 {
     case "Task25": Task25(); break;
     case "Task27": Task27(); break;
+    case "Task29": Task29(); break;
 
 }
 
@@ -62,3 +72,56 @@ int SumDig(int numberA)
     return result;
 
 }
+
+void Task29()
+{
+    Console.WriteLine("Task29");
+
+    int[] array = GetArray(ReadInt("array length"));
+
+    Console.WriteLine(ArrayToString(array));
+
+}
+
+int[] GetArray(int length)
+{
+    int[] array = new int[length];
+
+    for (int i = 0; i < array.Length; i++)
+    {
+        array[i] = ReadInt($"elemtn {i}");
+    }
+
+    return array;
+}
+
+string ArrayToString(int[] array)
+{
+    string result = string.Empty;
+
+    for (int i = 0; i < array.Length; i++)
+    {
+        result += $"{array[i]}, ";
+    }
+
+    return result;
+}
+
+// string ArrayToStringNoComma(int[] array)
+// {
+// string result = string.Empty;
+
+// for (int i = 0; i < array.Length; i++)
+// {
+// if (i == array.Length)
+// {
+// result += $"{array[i]} ";
+// }
+// else
+// {
+// result += $"{array[i]}, ";
+// }
+
+// return result;
+// }
+//}
