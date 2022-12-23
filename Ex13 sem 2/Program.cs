@@ -14,5 +14,3 @@ if (N >= 100)
     Console.WriteLine($"Третья цифра Вашего числа: {b = N % 10}");
 }
 else Console.WriteLine("третьей цифры нет");
-
-
