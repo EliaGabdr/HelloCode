@@ -6,11 +6,8 @@ Console.Write("Input command: ");
 switch (Console.ReadLine())
 {
     case "Task25": Task25(); break;
-}
-Console.WriteLine();
-bool IsLargeThen(int firstNumber, int secondNumber)
-{
-    return firstNumber > secondNumber;
+    case "Task27": Task27(); break;
+
 }
 
 int ReadInt(string argumentName)
@@ -41,4 +38,27 @@ void Task25()
     Console.WriteLine($"А = {numberA} в степени B = {numberB} это {Pow(numberA, numberB)} ");
 
 }
+void Task27()
+{
+    Console.WriteLine("Task27");
 
+    int numberA = ReadInt("А");
+
+    Console.WriteLine($"The sum of the digits in a number {numberA} = {SumDig(numberA)}");
+
+}
+
+int SumDig(int numberA)
+{
+    int result = 0;
+
+    while (numberA > 9)
+    {
+        result = result + (numberA % 10);
+        numberA = numberA / 10;
+    }
+
+    result = result + numberA;
+    return result;
+
+}
