@@ -29,7 +29,7 @@ double[] GetRandomArray(int length, int minValue, int maxValue)
     return array;
 }
 
-void PrintArray(int[] array)
+void PrintArray(double[] array)
 {
     for (int i = 0; i < array.Length; i++)
     {
@@ -59,5 +59,5 @@ double FindMin(double[] array)
 
 void dif(double max, double min)
 {
-    Console.WriteLine($"Difference between the maximum and minimum number = {max} - {min}");
+    Console.WriteLine($"Difference between the maximum and minimum number = {max - min}");
 }
