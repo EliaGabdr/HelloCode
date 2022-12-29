@@ -49,18 +49,24 @@ void PrintArray(int[,] array)
     }
 }
 
-double AverageMeanOfColumnElements(int[,] array)
+void AverageMeanOfColumnElements(int[,] array)
 {
-    int average = 0;
-    int i = 0;
-    for (int j = 0; j < array.GetLength(1); j++)
+    double average = 0;
+    double sum = 0;
+    for (int k = 0; k < array.GetLength(1); k++)
     {
-        while (i < array.GetLength(1))
+        for (int i = 0; i < array.GetLength(0); i++)
         {
-            average = average + array[i, j];
-            i = i + 1;
+            for (int j = 0; j < array.GetLength(1); j++)
+            {
+                if (j == k)
+                    sum += array[i, j];
+            }
         }
-        Console.Write($"{average}/{array.GetLength(1)} ");
+        average = sum / array.GetLength(0);
+        Console.WriteLine($"average {k + 1} column - {Math.Round(average, 2)}");
+        sum = 0;
     }
-    Console.WriteLine();
+
 }
+
